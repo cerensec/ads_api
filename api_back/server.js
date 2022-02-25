@@ -17,12 +17,12 @@ const cors = require('cors');
 app.use(cors());
 
 app.use(express.static(__dirname + '/public'));
-
+//mysql://b0855a60ce40f4:87cd764d@eu-cdbr-west-02.cleardb.net/heroku_6ffb4de0c8d1925?reconnect=true
 mysql.createConnection({
-	host: "db.3wa.io",
-	database: "carlosceren_annonces",
-	user: "carlosceren",
-	password: "78978bb2afb1cfd2d31b39fbd302277f"
+	host: "eu-cdbr-west-02.cleardb.net",
+	database: "heroku_6ffb4de0c8d1925",
+	user: "b0855a60ce40f4",
+	password: "87cd764d"
 	//port: 8889
 }).then((db) => {
 	console.log('connecté bdd');
