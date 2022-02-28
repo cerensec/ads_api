@@ -31,12 +31,12 @@ class Home extends React.Component {
         return (
             <div className="home-page">
                 <h1>Home Page</h1>
-                {this.state.ads.length !== 0 && <div>
+                {this.state.ads.length !== 0 && <div style={{display:"flex",flexDirection:"column", alignItems:"center"}}>
                     {this.state.ads.map((ad)=>{
                         return (
-                            <section key={ad.title}>
-                                <img src={config.pict_url+ad.url} alt={ad.url}/>
-                                <h5>{ad.title}</h5>
+                            <section key={ad.title} style={{border:"1px solid black",width:"300px"}} >
+                                <img style={{height:"100px"}} src={config.pict_url+ad.url} alt={ad.url}/>
+                                <Link to={"/detail/"+ad.id} style={{textDecoration:"none",color:"black"}}><h3>{ad.title}</h3></Link>
                             </section>
                         )
                     })}

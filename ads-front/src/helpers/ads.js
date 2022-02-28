@@ -16,9 +16,12 @@ export function loadAds(){
 
 //On charge juste une annonce 
 export function loadOneAds(id){
-    return axios.get(config.api_url+'/api/v1/ads'+id)
+    return axios.get(config.api_url+'/api/v1/ads/'+id)
     .then((response)=>{
-        
+        console.log(response)
+    })
+    .catch((err)=>{
+        console.log(err)
     })
 }
 
