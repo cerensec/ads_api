@@ -28,7 +28,7 @@ mysql.createConnection({
 	console.log('connecté bdd');
 	setInterval(async function () {
 		let res = await db.query('SELECT 1');
-	}, 10000);
+	}, 10000); //query sql
 	
 	app.get("/", (req,res,next)=>{
 	    res.json({status: 200, msg: "Welcome to your annonces API bro!"})
