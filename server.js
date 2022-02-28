@@ -109,16 +109,15 @@ mysql.createConnection({
 	// dans mon front je purrais chopper l'image avec l'url "localhost:3000/images/" + name
 
 	//route de modification
-	app.put('/api/v1/ads/update/:id',(req,res,next)=>{
-		db.query('UPDATE ads SET contents = ?, creationTimeStamp = NOW(), title = ?, url = ? WHERE id = ?', [req.body.contents, req.body.title, req.body.url, req.params.id])
-		.then((res,err)=>{
+	app.put('/api/v1/ads/update/:id', (req, res, next)=>{
+		let id = req.params.id;
+		db.query('UPDATE ads SET Title=?, Contents=? WHERE Id = ?', [req.body.title, req.body.contents, id])
+		.then((result, err)=>{
 			if(err){
-		        console.log(err)
-		    }
-		    // res.json({status: 200, result: "success"})
-			console.log("success")
+				res.json({status: 500, err: err})
+			}
+			res.json({status: 200, msg: "succes to update ads : "+id})
 		})
-		.catch(err=>{console.log("Error Update: ",err)})
 	})
 		
 	//route de suppression
