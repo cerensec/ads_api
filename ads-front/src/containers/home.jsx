@@ -36,7 +36,7 @@ class Home extends React.Component {
                         return (
                             <section key={ad.title} style={{border:"1px solid black",width:"300px"}} >
                                 <img style={{height:"100px"}} src={config.pict_url+ad.url} alt={ad.url}/>
-                                <Link to={"/detail/"+ad.id} style={{textDecoration:"none",color:"black"}}><h3>{ad.title}</h3></Link>
+                                <Link to={"/detail/"+ad.Id} style={{textDecoration:"none",color:"black"}}><h3>{ad.title}</h3></Link>
                             </section>
                         )
                     })}

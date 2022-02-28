@@ -19,9 +19,14 @@ export function loadOneAds(id){
     return axios.get(config.api_url+'/api/v1/ads/'+id)
     .then((response)=>{
         console.log(response)
+        return response.data.results.ad;
     })
     .catch((err)=>{
         console.log(err)
     })
+}
+
+export function addOneAd(title,contents,img){
+    return axios.post(config.api_url+"")
 }
 

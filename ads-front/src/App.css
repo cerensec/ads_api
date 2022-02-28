@@ -42,6 +42,21 @@
   border: 1px solid black;
 }
 
+table {
+	width: 70%;
+	margin: 0 auto;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th {
+	background-color: silver;
+}
+th, td {
+	padding: 10px 0;
+	border: 1px solid black;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
